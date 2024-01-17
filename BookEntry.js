@@ -10,6 +10,7 @@ function addBook(book) {
                   <td>${book.Genre}</td>
                   <td>${book.Language}</td>
                   <td>${book.Section}</td>
+                  <td>${book.Quantity}</td>
                   <td>
                   <button class="btn btn-primary editBtn" data-id="${book.id}">
                   <span class="glyphicon glyphicon-edit"</span></button>
@@ -26,6 +27,7 @@ function clearForm() {
   $("#Genre").val("");
   $("#Language").val("");
   $("#Section").val("");
+  $("#Quantity").val("");
 }
 
 function generateID() {
@@ -46,7 +48,7 @@ $("#libraryForm").submit(function (e) {
     Genre: $("#Genre").val(),
     Language: $("#Language").val(),
     Section: $("#Section").val(),
-
+    Quantity: $("#Quantity").val(),
   };
   books.push(book);
   addBook(book);
@@ -65,7 +67,8 @@ $("editForm").submit(function (e) {
   book.Age = $("editAge").val();
   book.Language = $("editLanguage").val();
   book.Genre = $("editGenre").val();
-  book.Section = $("editSection ").val();
+  book.Section = $("editSection").val();
+  book.Quantity = $("editQuantity").val();
 
   let row = $(`#${book.id}`);
   row.find("td:eq(0)").text(book.Title);
@@ -74,6 +77,7 @@ $("editForm").submit(function (e) {
   row.find("td:eq(0)").text(book.Age);
   row.find("td:eq(0)").text(book.Language);
   row.find("td:eq(0)").text(book.Section);
+  row.find("td:eq(0)").text(book.Quantity);
 
   $("#editModal").modal("hide");
 });
@@ -89,6 +93,7 @@ $(document).on("click", "#editBtn", function () {
   $("#editGenre").val(book.Genre);
   $("#editLanguage").val(book.Language);
   $("#editSection").val(book.Section);
+  $("#editQuantity").val(book.Quantity);
   $("#editBookId").val(book.id);
 
   $("#editModal").modal("show");
@@ -96,7 +101,6 @@ $(document).on("click", "#editBtn", function () {
 });
 
 $(document).on("click", "#clsBtn", function () {
-
   $("#editModal").modal("hide");
 });
 
@@ -105,7 +109,7 @@ $(document).on("click", "#deleteBtn", function () {
   let bookIndex = books.findIndex((book) => b00k.id == bookId);
   let book = books[bookIndex];
 
-  if (confirm(`Are you sure you want to delete ${book.title}`)) {
+  if (confirm(`Are you sure you want to delete ${book.title}?`)) {
     book.splice(bookIndex, 1);
     $(`#${book.id}`).remove();
   }
