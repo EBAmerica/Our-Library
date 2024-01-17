@@ -1,0 +1,88 @@
+label {
+      font-size: 20px !important;
+      letter-spacing: 3px !important;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: bold;
+}
+
+body {
+      background: url("Year3.png");
+      background-repeat: no-repeat;
+      background-size: cover !important;
+      font-size: 30px;
+}
+
+h3 {
+      font-family: 'Kablammo', cursive;
+      margin: 10px;
+      padding: 20px;
+      font-size: 100px;
+      color: black;
+}
+
+input {
+      text-align: center;
+}
+
+.btn {
+      border-width: 2px !important;
+      border-style: ridge !important;
+      font-family: 'Roboto Mono', monospace;
+      font-weight: bolder;
+      letter-spacing: 2px;
+      border-radius: 10px;
+}
+
+.btn-primary {
+      background-color:#b8f2e6 !important;
+      color: #7599eb !important;
+      border-color: #faf3dd !important;
+}
+
+.btn-danger {
+      background-color: #fdcdbe !important;
+      color: #7599eb !important;
+      border-color: #b8f2e6 !important;
+}
+
+.btn-success {
+      background-color: #b8f2e6 !important;
+      color: #a2b9f0 !important;
+      border-color: #faf3dd !important;
+}
+
+.btn-outline-success {
+      color: black !important;
+      border-color: #faf3dd !important;
+}
+
+.btn-outline-success:hover {
+      background-color: #b8f2e6 !important;
+      color: #7599eb !important;
+      border-color: #faf3dd !important;
+}
+.btn-warning {
+      background-color: #faf3dd !important;
+      color:#a2b9f0 !important;
+      border-color: #fdcdbe !important;
+}
+
+li {
+      font-size: 20px;
+}
+
+.copyright {
+      position: fixed;
+      bottom: 0;
+      color: #7599eb;
+      width: 100%;
+      background: #faf3dd;
+      text-align: right;
+      line-height: 2;
+      font-size: 20px;
+      font-weight: 700;
+      
+}
+ .glyphicon{
+  font-weight: bold;
+ }
