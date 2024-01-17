@@ -33,7 +33,7 @@
               class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#" style="color: black;font-family: 'Roboto Mono', monospace?">Add New Book<span
+          <a class="nav-link" href="#" style="color: black;font-family: 'Roboto Mono', monospace">Add New Book<span
               class="sr-only">(current)</span></a>
         </li>
       </ul>
@@ -54,47 +54,55 @@
       <br><br>
       <form id="libraryForm">
         <div class="form-group row">
+          <div class="col-1"></div>
           <div class="col">
             <label for="Title" class="col-form-label"> Title: </label>
           </div>
           <div class="col">
             <input type="text" name="Title" class="form-control" id="Title" placeholder="Name of the book">
           </div>
+          <div class="col-1"></div>
+        </div>
+        <div class="form-group row">
           <div class="col">
             <label for="Author" class="col-form-label">Author: </label>
           </div>
           <div class="col">
             <input type="text" name="Author" class="form-control" id="Author" placeholder="Name of the Author">
           </div>
-        </div>
-        <div class="form-group row">
           <div class="col">
             <label for="Age" class="col-form-label">Age Rate: </label>
           </div>
           <div class="col">
             <input type="text" name="Age" class="form-control" id="Age" placeholder="Age classification">
           </div>
-
+        </div>
+        <div class="form-group row">
           <div class="col">
             <label for="Genre" class="col-form-label">Genre: </label>
           </div>
           <div class="col">
             <input type="text" name="Genre" class="form-control" id="Genre" placeholder="Book's Genre">
           </div>
-        </div>
-        <div class="form-group row">
           <div class="col">
             <label for="Language" class="col-form-label">Language</label>
           </div>
           <div class="col">
             <input type="text" name="Language" class="form-control" id="Language" placeholder="Book's language">
           </div>
-
+        </div>
+        <div class="form-group row">
           <div class="col">
             <label for="Section" class="col-form-label">Section: </label>
           </div>
           <div class="col">
             <input type="text" name="Section" class="form-control" id="Section" placeholder="Where is the book?">
+          </div>
+          <div class="col">
+            <label for="Quantity" class="col-form-label">Quantity: </label>
+          </div>
+          <div class="col">
+            <input type="text" name="Quantity" class="form-control" id="Quantity" placeholder="How many books?">
           </div>
         </div>
         <hr>
@@ -125,7 +133,7 @@
     crossorigin="anonymous"></script>
 </body>
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbx4VkBfJRWzhrb6Q8hUMzYV61SP65nmWE-a0wpfGjTXirYC0nwUH6s2IYVmjxOFrlgU/exec'
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxvtzKhZEREmMCM0GngWrUxSz8jN7aJwFdSX-e0WHhSbR6QgQ3y2JpTmutcnYGTYYpl/exec'
   const form = document.querySelector('#libraryForm')
   const btn = document.querySelector('#addBtn')
 
@@ -139,15 +147,14 @@
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
       .then(response => {
         btn.disabled = false
-        btn.innerHTML = "Add Book"
+        btn.innerHTML = '<span class="fas fa-check-double"></span>Add Book'
         alert('Success!', response)
       })
       .catch(error => {
         btn.disabled = false
-        btn.innerHTML = "Add Book"
+        btn.innerHTML = '<span class="fas fa-check-double"></span>Add Book'
         alert('Error!', error.message)
       })
   })
 </script>
-
 </html>
